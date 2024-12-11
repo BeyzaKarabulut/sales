@@ -1,0 +1,21 @@
+
+INSERT INTO DEPARTMENT (Dname, Dnumber, Mgr_ssn, Mgr_start_date)
+VALUES ('Sales', 6, 999887777, '2005-03-15');
+
+
+INSERT INTO DEPT_LOCATIONS (Dnumber, Dlocation)
+VALUES (6, 'Austin'),
+       (6, 'Dallas');
+
+INSERT INTO PROJECT (Pname, Pnumber, Plocation, Dnum)
+VALUES ('ClientAcquisition', 40, 'Austin', 6),
+       ('MarketExpansion', 50, 'Dallas', 6);
+
+UPDATE EMPLOYEE
+SET Dno = 6
+WHERE Ssn IN (999887777, 987987987); -- Update specific employees as needed
+
+
+INSERT INTO WORKS_ON (Essn, Pno, Hours)
+VALUES (999887777, 40, 25.0),
+       (987987987, 50, 30.0);
